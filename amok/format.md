@@ -142,8 +142,9 @@ The same parameter names, `id`, `info` and `body` are used for `type`s, too.
 
 The embedded Markdown may include references to types and terms, written in
 backticks, for example `` `Date` ``. This may be intended to refer to the type
-`aviation.Date`, and should be linked as such, but it would be tedious to
-have to write `temporaneous.Date` instead of `Date` everywhere.
+`aviation.Date`, and should be linked to `aviation.Date` whenever it is
+presented, but it would be tedious to have to write `aviation.Date` instead of
+`Date` everywhere.
 
 Amok provides _imports_ to make this easier. An import brings another namespace
 into scope so that it can be referenced without a prefix, and appears as an
