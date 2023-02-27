@@ -1,0 +1,89 @@
+## Macros Course (Three days, 8 hrs/day)
+
+ - Inlining (2hrs)
+   - Basic mechanism
+     - Capabilities or `inline`: "macros without writing macros"
+     - `inline` methods, `inline` parameters
+     - Constant folding
+     - Bytecode comparison
+   - Transparent `inline`
+     - Differences from _plain_ `inline`
+     - Examples that seem like magic
+     - Other uses of `inline` 
+     - `summonInline`, `summonFrom`
+     - Relative compiletime/runtime performance of deep recursive method (e.g. `def fn(x) = fn(x - 1) + fn(x - 1)`)
+     - Fallback implicit example
+   - Dead Code Analysis
+     - Branch elimination
+     - Emitting compile-time errors
+     - Debugging
+     - `@compileTimeOnly`
+   - Compiletime features for inline contexts
+      - Summoning inline
+      - Accessing positions and capturing source code
+      - `erasedValue`
+
+ - Deriving and Mirrors (3hrs)
+   - The need for derivation
+     - Example of a simple manual derivation
+     - Generalization into "covariant" and "contravariant" cases
+     - Derivation of `Show` (Covariant example)
+     - Derivation of `Eq` (Contravariant example)
+     - Derivation with guidance from annotations
+   - The `derives` keyword and the special `derived` method
+   - Mirrors
+     - Mirror types
+   - Higher-kinded derivations
+     - Functor derivation example
+
+ - Quotes and Splices (7hrs)
+   - Hello World macro (return a static value)
+     - Macro entry point
+     - Quoted code block
+     - Compiler suspension
+   - Phase Consistency Principle
+     - The `Quotes` value
+     - Transcending phases
+     - Lifting to/from `Expr`s
+   - Typechecking inside quotes and splices
+   - Pattern matching
+     - Recap "standard" pattern matching rules
+     - New syntax for matching terms and types, bound vs matched
+     - Simple matching on `Expr`s
+     - Scoped values and types
+     - Pattern matching types
+   - Symbols
+     - Accessing information in term symbols
+     - Type Symbols
+     - Accessing companion object exmaple
+   - Generating code
+     - Lifting: `ToExpr` and `FromExpr`
+     - using `Expr` and `Exprs` objects
+     - Beta reduction
+   - String interpolator example
+   - Homogeneous units example
+   
+ - Reflection and Trees (7 hrs)
+   - TASTy
+     - Converting between `Type`s/`TypeRepr`s and `Tree`s/`Expr`s
+     - Discovering the Tasty AST - documentation sources
+     - The Hierarchy of TypeReprs
+   - Constructing code from ASTs
+     - Optimizing pattern match example
+   - Constructing types
+     - Record types example - generate types from a schema
+   - Moving between trees and `Expr`s
+ 
+ - Synthetic classes / annotations (1 hour)
+   - Annotations recap
+   - What can it do?
+     - Simple rewrite example (e.g. add an implicit parameter to a method?)
+   - `MacroAnnotation`
+     - entry point to code generation
+   - Generate new top-level class example (e.g. from some schema?)
+ 
+ - Multistage programming (1 hour)
+   - Setup (in sbt)
+   - Possible uses
+
+ - Compiler plugins (1 hour)
